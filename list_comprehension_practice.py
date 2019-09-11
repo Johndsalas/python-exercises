@@ -35,9 +35,16 @@ print(capitalized_fruits)
 
 # Exercise 3 - Use a list comprehension to make a variable named fruits_with_more_than_two_vowels. Hint: You'll need a way to check if something is a vowel.
 
-fruits_with_more_than_two_vowels = []
+fruits_with_more_than_two_vowels = [fruit for fruit in fruits if (fruit.lower().count("a") + fruit.lower().count("e") + fruit.lower().count("i") + fruit.lower().count("o") + fruit.lower().count("u")) > 2] 
+
+print(fruits_with_more_than_two_vowels)
+
 
 # Exercise 4 - make a variable named fruits_with_only_two_vowels. The result should be ['mango', 'kiwi', 'strawberry']
+
+fruits_with_only_two_vowels = [fruit for fruit in fruits if (fruit.lower().count("a") + fruit.lower().count("e") + fruit.lower().count("i") + fruit.lower().count("o") + fruit.lower().count("u")) == 2] 
+
+print(fruits_with_only_two_vowels)
 
 # Exercise 5 - make a list that contains each fruit with more than 5 characters
 
@@ -146,5 +153,30 @@ print(numbers_plus_5)
 
 # BONUS Make a variable named "primes" that is a list containing the prime numbers in the numbers list. *Hint* you may want to make or find a helper function that determines if a given number is prime or not.
 
-def is_prime(numbers):
+numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 17, 19, 23, 256, -8, -4, -2, 5, -9]
+
+
+def is_prime(number_list):
+
+    primes = []
+
+    for number in number_list:
+        count = 0
+        
+        if number > 1:  
+            
+            for i in range(2,number):  
+                
+                if (number % i) == 0:  
+                    count += 1
+        
+        else: 
+            count += 1
+            
+        if count == 0:
+            primes.append(number)
+
+    return primes
+           
+print(is_prime(numbers))
 
