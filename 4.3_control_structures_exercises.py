@@ -132,3 +132,39 @@ i = 100
 while i >= 5:
     print(i)
     i -= 5
+
+#Write some code that prompts the user for a number, then shows a multiplication table up through 10 for that number.
+
+print("Give me a number.")
+
+number = input()
+
+x = 1
+
+while x <= 10:
+    
+    print(f"{number} X {x} = " + str(int(number) * x))
+    x += 1
+
+#Create a for loop that uses print to create the output shown below.
+
+1
+22
+333
+4444
+55555
+666666
+7777777
+88888888
+999999999
+
+x = 1
+
+while x <= 9:
+
+    print(str(x) * int(x))
+
+    x += 1
+
+#break and continue
+

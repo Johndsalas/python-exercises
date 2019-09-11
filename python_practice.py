@@ -252,15 +252,15 @@ def can_enroll(enrollment,planning):
 
 A product offer can be applied only if people buys more than 2 items, and the offer has not expired. Premium members do not need to buy a specific amount of products.
 
-def product_offer(customer,items):
+def product_offer(customer,items,offer):
 
-    if (items > 2) or (customer = "Premium"):
-        offer = "Can Be Applied"
+    if (items > 2) or (customer = "Premium") or (offer = "expired"):
+        status = "Can Be Applied"
     
     else:
-        offer = "Cannot Be Applied"
+        status = "Cannot Be Applied"
 
-    return offer
+    return status
 
 Use the following code to follow the instructions below:
 
@@ -283,6 +283,6 @@ no_match = password != username
 
 bonus neither the username or password can start or end with whitespace
 
-no_whitespace = (username == username.strip) and (password == password.strip)
+no_whitespace = (username == username.strip()) and (password == password.strip())
 
 '''
