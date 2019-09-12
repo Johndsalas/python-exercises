@@ -98,7 +98,7 @@ handdle_commas(number)
 #Define a function named get_letter_grade. 
 # It should accept a number and return the letter grade associated with that number (A-F).
 
-def get_letter_grade(number):
+def get_letter_grade(grade):
 
     if grade in range(99,101):
         return "A+"
@@ -139,19 +139,42 @@ def get_letter_grade(number):
     if grade in range(1,60):
         return "F"
 
+grade = 99
+get_letter_grade(grade)
+
+#Define a function named remove_vowels that accepts a string and returns a string with all the vowels removed.
 
 
 
-Define a function named remove_vowels that accepts a string and returns a string with all the vowels removed.
-Define a function named normalize_name. It should accept a string and return a valid python identifier, that is:
-anything that is not a valid python identifier should be removed
-leading and trailing whitespace should be removed
-everything should be lowercase
-spaces should be replaced with underscores
-for example:
-Name will become name
-First Name will become first_name
-% Completed will become completed
+def remove_vowels(word):
+
+    return word.replace("a","").replace("e","").replace("i","").replace("o","").replace("u","")
+
+
+word = "Yaba daba do aeiou"
+remove_vowels(word)
+
+#Define a function named normalize_name. 
+# It should accept a string and return a valid python identifier, that is:
+# anything that is not a valid python identifier should be removed
+#leading and trailing whitespace should be removed
+#everything should be lowercase
+#spaces should be replaced with underscores
+#for example:
+#Name will become name
+#First Name will become first_name
+#% Completed will become completed
+
+def normalize_name(input):
+
+    for letter in input:
+        
+        if letter.isalpha() is false and letter.is
+
+input = "     Valid PyThOn identifier     "
+
+
+
 Write a function named cumsum that accepts a list of numbers and returns a list that is the cumulative sum of the numbers in the list.
 cumsum([1, 1, 1]) returns [1, 2, 3]
 cumsum([1, 2, 3, 4]) returns [1, 3, 6, 10]
