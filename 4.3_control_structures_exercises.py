@@ -420,7 +420,34 @@ while gate_keeper == True:
     if again.lower() != "yes":
         gate_keeper = False
     
-
-Create a list of dictionaries where each dictionary represents a book that you have read. Each dictionary in the list should have the keys title, author, and genre. Loop through the list and print out information about each book.
-
+'''
+Create a list of dictionaries where each dictionary represents a book that you have read. 
+Each dictionary in the list should have the keys title, author, and genre. Loop through the list and print out information about each book.
 Prompt the user to enter a genre, then loop through your books list and print out the titles of all the books in that genre.
+'''
+
+books = [
+            {"Title":"Dune", "Auther":"Frank Hurbert", "Genre":"Science Fiction"}, 
+            {"Title":"The Hobbit", "Auther":"J.R.R. Tolkien", "Genre":"Fantasy"},
+            {"Title":"We", "Auther":"Yevgeny Zamyatin","Genre":"Science Fiction"}
+        ]
+
+for dictionary in books:
+    for key,value in dictionary.items():
+        print(key," >>> ",value)
+    print("")
+
+print("Please, select a Genre.")
+request = input()
+
+for dictionary in books:
+    
+    for key,value in dictionary.items():
+        if value.lower() == request.lower():
+            print("")
+            
+            for key,value in dictionary.items():
+                if key.lower() == "Title".lower():
+                    print(value)
+            
+           
