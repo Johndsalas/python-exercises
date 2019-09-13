@@ -1,8 +1,8 @@
-#Define a function named is_two. It should accept one input and return True if the passed input is either the number or the string 2, False otherwise.
+#Define a function named is_two. It should accept one input and return True     if the passed input is either the number or the string 2, False otherwise.
 
 def is_two(input):
 
-    if input in(2,"2"):
+        if input in(2,"2"):
         return True
 
     else: return False
@@ -12,11 +12,11 @@ input = "3"
 is_two(input)
 
 
-#Define a function named is_vowel. It should return True if the passed string is a vowel, False otherwise.
+#Define a function named is_vowel. It should return True    if the passed string is a vowel, False otherwise.
 
 def is_vowel(vowel):
 
-    if vowel.lower() in("a","e","i","o","u"):
+        if vowel.lower() in("a","e","i","o","u"):
         return True
 
     else: return False
@@ -28,12 +28,12 @@ is_vowel(vowel)
 
 
 #Define a function named is_consonant. 
-# It should return True if the passed string is a consonant, False otherwise. 
+# It should return True     if the passed string is a consonant, False otherwise. 
 # Use your is_vowel function to accomplish this.
 
 def is_consonant(letter):
 
-    if len(letter) == 1 and letter.isalpha() == True and letter.lower() not in("a","e","i","o","u"):
+        if len(letter) == 1 and letter.isalpha() == True and letter.lower() not in("a","e","i","o","u"):
         return True
         
     else: return False
@@ -43,11 +43,11 @@ vowel = "c"
 is_consonant(vowel)
 
 #Define a function that accepts a string that is a word. 
-# The function should capitalize the first letter of the word if the word starts with a consonant.
+# The function should capitalize the first letter of the word   if the word starts with a consonant.
 
 def capitalize_if_consonant(word):
 
-    if word[0:1] not in ("a","e","i","o","u"):
+        if word[0:1] not in ("a","e","i","o","u"):
         word = word.capitalize()
         
     return word
@@ -100,43 +100,43 @@ handdle_commas(number)
 
 def get_letter_grade(grade):
 
-    if grade in range(99,101):
+        if grade in range(99,101):
         return "A+"
     
-    if grade in range(92,99):
+        if grade in range(92,99):
         return "A"
         
-    if grade in range(90,92):
+        if grade in range(90,92):
         return "A-"
         
-    if grade in range(88,90):
+        if grade in range(88,90):
         return "B+"
         
-    if grade in range(82,89):
+        if grade in range(82,89):
         return "B"
         
-    if grade in range(80,82):
+        if grade in range(80,82):
         return "B-"
         
-    if grade in range(78,80):
+        if grade in range(78,80):
         return "C+"
     
-    if grade in range(72,78):
+        if grade in range(72,78):
         return "C"
         
-    if grade in range(70,72):
+        if grade in range(70,72):
         return "C-"
         
-    if grade in range(68,70):
+        if grade in range(68,70):
         return "D+"
         
-    if grade in range(62,68):
+        if grade in range(62,68):
         return "D"
     
-    if grade in range(60,62):
+        if grade in range(60,62):
         return "D-"
         
-    if grade in range(1,60):
+        if grade in range(1,60):
         return "F"
 
 grade = 99
@@ -156,7 +156,7 @@ remove_vowels(word)
 
 #Define a function named normalize_name. 
 # It should accept a string and return a valid python identifier, that is:
-# anything that is not a valid python identifier should be rec  cmoved
+# anything that is not a valid python identifier should be removed
 #leading and trailing whitespace should be removed
 #everything should be lowercase
 #spaces should be replaced with underscores
@@ -167,18 +167,25 @@ remove_vowels(word)
 
 def normalize_name(input):
 
+
+    for symbol in input:
+
+      if symbol == "_":
+
+          input = input.replace(symbol, " ")
+
     for symbol in input:
         
-        if symbol.isalpha() == False and symbol.isdigit() == False and symbol != " ":
+            if symbol.isalpha() == False and symbol.isdigit() == False and symbol != " ":
 
-            input = input.replace(symbol, "")
+                input = input.replace(symbol, "")
 
     input = input.strip().lower().replace(" ", "_")
 
     return input
 
 
-input = " ^&*()    V@#$a@$lid PyT%^&%#&hOn ide@$%ntif@#ier  $#%^$^   "
+input = " ^&-_-*()  __  V@#$a@$lid_PyT%^&%#&hOn ide@$%ntif@#ier  $#%^-$^   "
 
 normalize_name(input)
 
@@ -213,7 +220,7 @@ and return a string that is the representation of the time in a 24-hour format.
 
 def twelveto24(time):
 
-    if time[-2:] == "am" and time[:2] == "12": 
+        if time[-2:] == "am" and time[:2] == "12": 
         return "00" + time[2:-2] 
              
     elif time[-2:] == "am": 
@@ -235,7 +242,7 @@ Bonus write a function that does the opposite.
 '''
 def reverse_time(time):
 
-    if int(time[:2]) >= 12:
+        if int(time[:2]) >= 12:
 
         hour = time[:2]
         hour = int(hour)        
@@ -254,54 +261,71 @@ reverse_time(time)
 
 
 '''
-Create a function named col_index. 
-It should accept a spreadsheet column name, and return the index number of the column.
-col_index('A') returns 1
-col_index('B') returns 2
-col_index('AA') returns 27
+Create a function named col_x. 
+It should accept a spreadsheet column name, and return the x umber of the column.
+col_x('A') returns 1
+col_x('B') returns 2
+col_x('AA') returns 27
 '''
 
-def col_index(column_name):
+def col_x(column_name):
 
-    index = 0
+    #((26**0 * 1-26) + (26**1 * 1-26)  (26*2 + 1-26)
 
-    index += (len(column_name)-1) * 26
+    reverse =[]
 
-    column_name[len(column_name):]
+    multiplyer =  0 
+    
+    x = 0
 
-    if column_name[len(column_name)-1:] == "A": index += 1
-    if column_name[len(column_name)-1:] == "B": index += 2
-    if column_name[len(column_name)-1:] == "C": index += 3
-    if column_name[len(column_name)-1:] == "D": index += 4
-    if column_name[len(column_name)-1:] == "E": index += 5
-    if column_name[len(column_name)-1:] == "F": index += 6
-    if column_name[len(column_name)-1:] == "G": index += 7
-    if column_name[len(column_name)-1:] == "H": index += 8
-    if column_name[len(column_name)-1:] == "i": index += 9
-    if column_name[len(column_name)-1:] == "J": index += 10
-    if column_name[len(column_name)-1:] == "K": index += 11
-    if column_name[len(column_name)-1:] == "L": index += 12
-    if column_name[len(column_name)-1:] == "M": index += 13
-    if column_name[len(column_name)-1:] == "N": index += 14
-    if column_name[len(column_name)-1:] == "O": index += 15
-    if column_name[len(column_name)-1:] == "P": index += 16
-    if column_name[len(column_name)-1:] == "Q": index += 17
-    if column_name[len(column_name)-1:] == "R": index += 18
-    if column_name[len(column_name)-1:] == "S": index += 19
-    if column_name[len(column_name)-1:] == "T": index += 20
-    if column_name[len(column_name)-1:] == "U": index += 21
-    if column_name[len(column_name)-1:] == "v": index += 22
-    if column_name[len(column_name)-1:] == "v": index += 23
-    if column_name[len(column_name)-1:] == "X": index += 24
-    if column_name[len(column_name)-1:] == "Y": index += 25
-    if column_name[len(column_name)-1:] == "Z": index += 26
+    total = 0
 
-    return index
+    for letter in column_name:
+        reverse.append(letter)
 
-column_name = "BB"
+    y = 0
 
-col_index(column_name)
+    for item in reverse:
 
+        sub_total = 0
+
+        if letter == "A": x = 1
+        if letter == "B": x = 2
+        if letter == "C": x = 3
+        if letter == "D": x = 4
+        if letter == "E": x = 5
+        if letter == "F": x = 6
+        if letter == "G": x = 7
+        if letter == "H": x = 8
+        if letter == "i": x = 9
+        if letter == "J": x = 10
+        if letter == "K": x = 11
+        if letter == "L": x = 12
+        if letter == "M": x = 13
+        if letter == "N": x = 14
+        if letter == "O": x = 15
+        if letter == "P": x = 16
+        if letter == "Q": x = 17
+        if letter == "R": x = 18
+        if letter == "S": x = 19
+        if letter == "T": x = 20
+        if letter == "U": x = 21
+        if letter == "v": x = 22
+        if letter == "v": x = 23
+        if letter == "X": x = 24
+        if letter == "Y": x = 25
+        if letter == "Z": x = 26
+
+        sub_total = (26**y) * x
+        total += sub_total
+        
+        y += 1
+
+    return total
+
+column_name = "AAB"
+
+col_x(column_name)
 
 
 
