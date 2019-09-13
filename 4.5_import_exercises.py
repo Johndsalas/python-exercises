@@ -31,10 +31,16 @@ c(column)
 
 # For the following exercises, read about and use the itertools module from the standard library to help you solve the problem.
 
+import itertools as i
 
-# How many different ways can you combine the letters from "abc" with the numbers 1, 2, and 3?
+# How many different ways can you combine the letters from "abc" with the numbers 1, 2, and 3? 
+
+i.chain("abc", "123")
 
 # How many different ways can you combine two of the letters from "abcd"?
+
+i.combinations("abcd", 2)
+
 # Save this file as profiles.json inside of your exercises directory. 
 # Use the load function from the json module to open this file, it will produce a list of dictionaries. 
 # Using this data, write some code that calculates and outputs the following information:
