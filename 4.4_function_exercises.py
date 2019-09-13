@@ -12,12 +12,11 @@ input = "3"
 
 is_two(input)
 
-
 #Define a function named is_vowel. It should return True   if the passed string is a vowel, False otherwise.
 
 def is_vowel(vowel):
 
-    if vowel.lower() in("a","e","i","o","u"):
+    if len(vowel) ==  1 and vowel.lower() in("a","e","i","o","u"):
 
         return True
 
@@ -25,11 +24,9 @@ def is_vowel(vowel):
         
         return False
 
-vowel = "12"
+vowel = "aa"
 
 is_vowel(vowel)
-
-
 
 #Define a function named is_consonant. 
 # It should return True    if the passed string is a consonant, False otherwise. 
@@ -46,6 +43,8 @@ vowel = "c"
 
 is_consonant(vowel)
 
+
+
 #Define a function that accepts a string that is a word. 
 # The function should capitalize the first letter of the word  if the word starts with a consonant.
 
@@ -56,7 +55,6 @@ def capitalize_if_consonant(word):
         word = word.capitalize()
         
     return word
-
 
 word = "anogram"
 capitalize_if_consonant(word)
@@ -95,7 +93,9 @@ apply_discount(original_price,discount_percentage)
 
 def handdle_commas(number):
 
-    return number.replace(",", "")
+    number = number.replace(",", "")
+
+    return number
 
 number = ",,,45,67,89,,,"
 handdle_commas(number)

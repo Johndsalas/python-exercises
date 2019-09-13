@@ -35,17 +35,35 @@ import itertools as i
 
 # How many different ways can you combine the letters from "abc" with the numbers 1, 2, and 3? 
 
-i.chain("abc", "123")
+step_one = list(i.product("abc", "123"))
+
+print(len(step_one))
+
+
 
 # How many different ways can you combine two of the letters from "abcd"?
 
-i.combinations("abcd", 2)
+import itertools as i
+
+step_one = list(i.combinations("abcd", 2))
+
+print(step_one)
+
+len(step_one)
 
 # Save this file as profiles.json inside of your exercises directory. 
-# Use the load function from the json module to open this file, it will produce a list of dictionaries. 
+# Use the load function from the json module to open this file, 
+# it will produce a list of dictionaries. 
 # Using this data, write some code that calculates and outputs the following information:
 
+import JSON
+
+
+
 # Total number of users
+
+
+
 # Number of active users
 # Number of inactive users
 # Grand total of balances for all users
