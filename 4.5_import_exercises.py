@@ -174,6 +174,15 @@ for dictionary in p1:
             if number_value < lowest_balance:
 
                 lowest_balance = number_value
+    
+    #print(lowest_balance)
+for dictionary in p1:
+
+    for key,value in dictionary.items():
+    
+        if key == "balance" and value == lowest_balance:
+        
+            print('user')
 
 print(lowest_balance)
 
@@ -196,6 +205,10 @@ for dictionary in p1:
             if number_value > highest_balance:
 
                 highest_balance = number_value
+
+for dictionary in p1:
+    if p1[float('balance'.replace(",", "").replace("$", "")] == int(highest_balance):
+        print(dictionary)
 
 print(highest_balance)
 
@@ -284,4 +297,16 @@ for dictionary in p1:
             #unread_message_total += int(value[-19:-17])
 
 print(total_mail)
+
+'''
+
+type(p)
+
+p[0]
+
+second friend name
+
+profiles[0]['friends'[1]['name']
+
+numerical index vs. string key
 
