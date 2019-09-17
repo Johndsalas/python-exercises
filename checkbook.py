@@ -7,10 +7,6 @@ while application == "on":
 
     print("")
     print("")
-
-
-
-
     print("What would you like to do?")
     print("")
     print("1: View Balance")
@@ -20,28 +16,32 @@ while application == "on":
     print("")
     choice = input()
 
-    if choice == "1" or "2" or "3" or "4":
-        choice = int(input())
-
-    if choice == "1":
-        print("1")
+    if choice != "1" and choice != "2" and choice != "3" and choice != "4":
         
-    elif choice == "2":
-        print("2")
+        print("Please enter 1, 2, 3, or 4.")
+        
+    else:
+        
+        while choice == "1":
+            print("1 make a new choice!")
+            choice = input()
+        
+        while choice == "2":
+            print("2 make a new choice!")
+            choice = input()
     
-    elif choice == "3":
-        print("3")
+        while choice == "3":
+            print("3 make a new choice!")
+            choice = input()
     
-    elif choice == "4":
-        print(4)
-        print("END DEMO")
-        break
-
+        if choice == "4":
+            print("Thank You, Good By")
+            break
  '''       
-        print("")
-        print("")
-        print("Thanks, have a great day!")
-        break
+    print("")
+    print("")
+    print("Thanks, have a great day!")
+    break
         
         
         while choice == "1":
@@ -127,3 +127,5 @@ while application == "on":
         if choice == 4:
 
             print("Thank You, Have a nice day")
+
+'''
