@@ -1,3 +1,5 @@
+import json
+
 application = "on"
 
 print("~~~ Welcome to your terminal checkbook! ~~~")
@@ -23,8 +25,29 @@ while application == "on":
     else:
         
         while choice == "1":
-            print("1 make a new choice!")
-            choice = input()
+            
+            with open('balance.txt') as b
+                b_contents = b.read()
+            
+            print("")
+            print(f"Your current balance is ${b[balance]}.")
+            print("")
+            print("")
+            print("Would you like another tranaction? y/n")
+            print("")
+            print("")
+            
+            balance_choice = input()
+            
+            if balance_choice == n:
+                choice = "4"
+                
+            if balance_choice == y:
+                choice = "null"
+                
+            else:
+                
+                print("Invalid entry. Plese type 'y' or 'n'")
         
         while choice == "2":
             print("2 make a new choice!")
@@ -37,6 +60,7 @@ while application == "on":
         if choice == "4":
             print("Thank You, Good By")
             break
+            
  '''       
     print("")
     print("")
@@ -128,4 +152,5 @@ while application == "on":
 
             print("Thank You, Have a nice day")
 
-'''
+ '''               
+                
