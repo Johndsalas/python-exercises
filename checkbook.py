@@ -2,25 +2,32 @@ import json
 
 application = "on"
 
+print("                                             ")
+print("                  (\___/)                    ")
+print("                  (o\ /o)                    ")
+print("                 /|:.V.:|\                   ")
+print("                 \\\::::://                  ")
+print("    ---------------\"\"-\"\"--------------   ")
 print("~~~ Welcome to your terminal checkbook! ~~~")
 
 
 while application == "on":
 
-    print("")
+    
     print("")
     print("What would you like to do?")
     print("")
-    print("1: View Balance")
-    print("2: Record a Debit (Withdraw)")
-    print("3: Record a Credit (Deposit)")
-    print("4: Quit Application")
-    print("")
+    print("1: view current balance")
+    print("2: record a debit (withdraw)")
+    print("3: record a credit (deposit)")
+    print("4: quit application")
+    
     choice = input()
 
     if choice != "1" and choice != "2" and choice != "3" and choice != "4":
         
-        print("Please enter 1, 2, 3, or 4.")
+        print("")
+        print("Invalid entry. Please enter 1, 2, 3, or 4.")
         
     else:
         
@@ -28,16 +35,18 @@ while application == "on":
             
             with open('balance.txt', 'r') as b:
                 b_contents = b.read()
+                b_contents = float(b_contents)
+                
             
             print("")
             print(f"Your current balance is ${b_contents}.")
-            print("")
-            print("")
+          
             
             y_or_n = "unmade"
             
             while y_or_n != "n" and y_or_n != "y":
             
+                print("")
                 print("Would you like another tranaction? y/n")    
 
                 y_or_n = input()
@@ -51,50 +60,67 @@ while application == "on":
                 else:
                 
                     print("")
-                    print("Invalid entry. Plese type 'y' or 'n'")
-                    print("")
+                    print("Invalid entry. Plese type 'y' or 'n'.")
+                    
         
         while choice == "2":
             
             with open('balance.txt', 'r') as b:
                 b_contents = b.read()
     
-            print("")
-            print(f"Your current balance is ${b_contents}.")
-            print("")
-            print("Amount to debit? (withdraw)")
-            
-            withdraw = input()
-            withdraw = float(withdraw)
-            
-            new_balance = float(b_contents) - withdraw
-            
-            with open('balance.txt', 'w+') as b:
+                print("")
+                print(f"Your current balance is ${b_contents}.")
                 
-                b.write(str(new_balance))   
+            
+            debit = "active"
+            while debit == "active":
                 
-            print(f"You are withdrawing ${str(withdraw)}. Your current balance is now ${str(new_balance)}.")
-            print("")
-            print("")
-            y_or_n = "unmade"
+                print("")
+                print("Amount to debit? (withdraw)")
+                print("Please enter a dollor amount using only numbers and a decimal point.")
+                
+                
+                withdraw = input()
+              
+                try: withdraw = float(withdraw)
+                except: 
+                    
+                    print("")
+                    print("Invalid entry.")
+                    
+                    continue
             
-            while y_or_n != "n" and y_or_n != "y":
+                new_balance = float(b_contents) - withdraw
             
-                print("Would you like another tranaction? y/n")    
+                with open('balance.txt', 'w+') as b:
+                
+                    b.write(str(new_balance))   
+                
+                print("")
+                print(f"You are withdrawing ${str(withdraw)}. Your current balance is now ${str(new_balance)}.")
+                
+                y_or_n = "unmade"
+            
+                while y_or_n != "n" and y_or_n != "y":
+            
+                    print("")
+                    print("Would you like another transaction? y/n")    
 
-                y_or_n = input()
+                    y_or_n = input()
             
-                if y_or_n == "n":
-                    choice = "4"
+                    if y_or_n == "n":
+                        debit = "inactive"
+                        choice = "4"
                 
-                elif y_or_n == "y":
-                    choice = "null"
+                    elif y_or_n == "y":
+                        debit = "inactive"
+                        choice = "null"
                 
-                else:
+                    else:
                 
-                    print("")
-                    print("Invalid entry. Plese type 'y' or 'n'")
-                    print("")
+                        print("")
+                        print("Invalid entry. Plese type 'y' or 'n'")
+                        
     
         while choice == "3":
             
@@ -103,17 +129,23 @@ while application == "on":
     
             print("")
             print(f"Your current balance is ${b_contents}.")
-            print("")
+            
             
             credit = "active"
             while credit == "active":
                 
+                print("")
                 print("Amount to credit? (Deposit)")
+                print("Please enter a dollor amount using only numbers and a decimal point.")
             
                 deposit = input()
                 
                 try:deposit = float(deposit)
-                except: continue
+                except: 
+                    
+                    print("")
+                    print("Invalid Entry.")
+                    continue
                     
                 new_balance = float(b_contents) + deposit
             
@@ -121,15 +153,15 @@ while application == "on":
                 
                     b.write(str(new_balance))   
                 
+                print("")
                 print(f"You are depositing ${str(deposit)}. Your current balance is now ${str(new_balance)}.")
-                print("")
-                print("")
-            
+                
                 y_or_n = "unmade"
             
                 while y_or_n != "n" and y_or_n != "y":
             
-                    print("Would you like another tranaction? y/n")    
+                    print("")
+                    print("Would you like another transaction? y/n")    
 
                     y_or_n = input()
             
@@ -145,12 +177,15 @@ while application == "on":
                 
                         print("")
                         print("Invalid entry. Plese type 'y' or 'n'")
-                        print("")
-    
-    
+                    
         if choice == "4":
+            
             print("")
             print("Thank You! Have a Nice Day!")
+            print("")
             application = "off"
             break
             
+
+                
+                
