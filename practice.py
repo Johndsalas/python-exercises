@@ -1,57 +1,75 @@
-def keep_long_words(words):
 
-    '''
-    >>> keep_long_words(['ls', 'codeup', 'code', 'pip', 'bayes'])
-    ['codeup', 'bayes']
-    >>> keep_long_words(['cd', 'ls', 'pwd'])
-    []
-    >>> keep_long_words(['python', 'algorithm'])
-    ['python', 'algorithm']
-    '''
 
-    lst = []
+print("welcome to notebook 2.0")
 
-    for word in words:
+application = "on"
 
-        if len(word) > 4:
-        
-            lst.append(word)
+while application == "on":
 
-    return lst
+print("what would you like to do?")
+print("1: view balance")
+print("2: record a debit/credit")
+print("3: view previous transactions ")
 
-keep_long_words(['ls', 'codeup', 'code', 'pip', 'bayes'])
+choice = input()
+
+#if choice == 1: veiw_balance()
+
+if choice == 2: transaction()
+
+#if choice == 3: history()
+
+if choice == 4: 
+
+    print("")
+    print("Thank you! Have a nice day!")
+    break
+
+def transaction():
+
+    print("")
+    print("credit or debit?")
+    print("1: credit")
+    print("2: debit")
+
+    num = input()
+
+    if num == 1: typ = 'credit'
+    elif num == 2: typ = 'debit'
+    elif: transaction()
+    
+    print("")
+    print(f"amount of {typ}?")
+    print("Please enter a positive number amount with only numbers and one decimal point")
+
+    change = input()
+
+    print("enter a comment for this transaction")
+
+    comment = input()
 
     
-def make_model(cars):
-    
-    lst = []
 
-    '''
-    >>> cars = []
-    >>> cars.append({'make': 'Toyota', 'model': 'Camry'})
-    >>> cars.append({'make': 'Honda', 'model': 'Accord'})
-    >>> cars.append({'make': 'Ford', 'model': 'Fiesta'})
-    >>> cars.append({'make': 'Ford', 'model': 'F-150'})
-    >>> make_model(cars)
-    '''
 
-    for dict in cars:
 
-        car = dict['make'] + ' ' + dict['modle']
 
-        lst.appent(car)
 
-    return lst
 
-def extract_time_components(string):
 
-    '''
-    >>> extract_time_components('21:30:00')
-    {'hours': 21, 'minutes': 30, 'seconds': 0}
-    >>> extract_time_components('09:01:53')
-    {'hours': 9, 'minutes': 1, 'seconds': 53}
-    '''
 
-    return {'hours': int(string[0:2]), 'minutes': int(string[3:5]), 'seconds': int(string[-2:])}
 
-extract_time_components('21:30:00')
+
+
+
+
+typ = "debit"
+
+amount = 50
+
+comment = "Electric Bill"
+
+dictionary = {"type": typ, 'amount': amount, 'comment': comment}
+   
+with open('sample.txt', 'a') as s:
+
+    s.write(str(dictionary) + "\n")
