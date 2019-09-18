@@ -36,7 +36,7 @@ while application == "on":
             with open('balance.txt', 'r') as b:
                 b_contents = b.read()
                 b_contents = float(b_contents)
-                
+                b_contents = "{:.2f}".format(b_contents)
             
             print("")
             print(f"Your current balance is ${b_contents}.")
@@ -67,6 +67,8 @@ while application == "on":
             
             with open('balance.txt', 'r') as b:
                 b_contents = b.read()
+                b_contents = float(b_contents)
+                b_contents = "{:.2f}".format(b_contents)
     
                 print("")
                 print(f"Your current balance is ${b_contents}.")
@@ -91,6 +93,9 @@ while application == "on":
                     continue
             
                 new_balance = float(b_contents) - withdraw
+
+                withdraw = "{:.2f}".format(withdraw)
+                new_balance = "{:.2f}".format(new_balance)
             
                 with open('balance.txt', 'w+') as b:
                 
@@ -148,6 +153,9 @@ while application == "on":
                     continue
                     
                 new_balance = float(b_contents) + deposit
+
+                deposit = "{:.2f}".format(deposit)
+                new_balance = "{:.2f}".format(new_balance)
             
                 with open('balance.txt', 'w+') as b:
                 
