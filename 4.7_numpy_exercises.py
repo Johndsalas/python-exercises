@@ -288,14 +288,52 @@ print(evens_in_b)
 
 # Exercise 9 - print out the shape of the array b.
 
+import numpy as np
 
+b = np.array([
+                [3, 4, 5],
+                [6, 7, 8]
+            ])
+
+print(b.shape)
 
 
 # Exercise 10 - transpose the array b.
 
+import numpy as np
+
+b = np.array([
+                [3, 4, 5],
+                [6, 7, 8]
+            ])
+
+b = np.transpose(b)
+print(b)
+
+
 # Exercise 11 - reshape the array b to be a single list of 6 numbers. (1 x 6)
 
+import numpy as np
+
+b = np.array([
+                [3, 4, 5],
+                [6, 7, 8]
+            ])
+
+b = b.reshape(1,6)
+print(b)
+
 # Exercise 12 - reshape the array b to be a list of 6 lists, each containing only 1 number (6 x 1)
+
+import numpy as np
+
+b = np.array([
+                [3, 4, 5],
+                [6, 7, 8]
+            ])
+
+b = b.reshape(6,1)
+print(b)
 
 ## Setup 3
 c = [
