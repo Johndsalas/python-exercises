@@ -336,53 +336,262 @@ b = b.reshape(6,1)
 print(b)
 
 ## Setup 3
-c = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
+c = np.array([
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]
+            ])
+
+
 
 # HINT, you'll first need to make sure that the "c" variable is a numpy array prior to using numpy array methods.
 # Exercise 1 - Find the min, max, sum, and product of c.
+import numpy as np
+
+c = np.array([
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]
+            ])
+
+
+max_c = c.max()
+min_c = c.min()
+sum_c = c.sum()
+
+print(max_c)
+print(min_c)
+print(sum_c)
 
 # Exercise 2 - Determine the standard deviation of c.
 
+import numpy as np
+
+c = np.array([
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]
+            ])
+
+print(c.std())
+
 # Exercise 3 - Determine the variance of c.
+
+import numpy as np
+
+c = np.array([
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]
+            ])
+
+print(c.var())
 
 # Exercise 4 - Print out the shape of the array c
 
+import numpy as np
+
+c = np.array([
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]
+            ])
+
+print(c.shape)
+
 # Exercise 5 - Transpose c and print out transposed result.
+
+import numpy as np
+
+c = np.array([
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]
+            ])
+
+print(np.transpose(c))
 
 # Exercise 6 - Multiply c by the c-Transposed and print the result.
 
+import numpy as np
+
+c = np.array([
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]
+            ])
+
+new_c = c * np.transpose(c)
+
+print(new_c)
+
 # Exercise 7 - Write the code necessary to sum up the result of c times c transposed. Answer should be 261
+
+import numpy as np
+
+c = np.array([
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]
+            ])
+
+new_c = c * np.transpose(c)
+
+sum_new_c = new_c.sum()
+
+print(sum_new_c)
+
 
 # Exercise 8 - Write the code necessary to determine the product of c times c transposed. Answer should be 131681894400.
 
+import numpy as np
+
+c = np.array([
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]
+            ])
+
+new_c = c * np.transpose(c)
+
+sum_new_c = np.prod(new_c)
+
+print(sum_new_c)
 
 ## Setup 4
-d = [
+d = np.array([
     [90, 30, 45, 0, 120, 180],
     [45, -90, -30, 270, 90, 0],
     [60, 45, -45, 90, -45, 180]
-]
+])
 
 # Exercise 1 - Find the sine of all the numbers in d
 
+import numpy as np
+
+d = np.array([
+    [90, 30, 45, 0, 120, 180],
+    [45, -90, -30, 270, 90, 0],
+    [60, 45, -45, 90, -45, 180]
+])
+
+np.sin(d)
+
 # Exercise 2 - Find the cosine of all the numbers in d
+
+import numpy as np
+
+d = np.array([
+    [90, 30, 45, 0, 120, 180],
+    [45, -90, -30, 270, 90, 0],
+    [60, 45, -45, 90, -45, 180]
+])
+
+np.cos(d)
 
 # Exercise 3 - Find the tangent of all the numbers in d
 
+import numpy as np
+
+d = np.array([
+    [90, 30, 45, 0, 120, 180],
+    [45, -90, -30, 270, 90, 0],
+    [60, 45, -45, 90, -45, 180]
+])
+
+np.tan(d)
+
 # Exercise 4 - Find all the negative numbers in d
+
+import numpy as np
+
+d = np.array([
+    [90, 30, 45, 0, 120, 180],
+    [45, -90, -30, 270, 90, 0],
+    [60, 45, -45, 90, -45, 180]
+])
+
+d[d < 0]
 
 # Exercise 5 - Find all the positive numbers in d
 
+import numpy as np
+
+d = np.array([
+    [90, 30, 45, 0, 120, 180],
+    [45, -90, -30, 270, 90, 0],
+    [60, 45, -45, 90, -45, 180]
+])
+
+d[d > 0]
+
 # Exercise 6 - Return an array of only the unique numbers in d.
+
+import numpy as np
+
+d = np.array([
+    [90, 30, 45, 0, 120, 180],
+    [45, -90, -30, 270, 90, 0],
+    [60, 45, -45, 90, -45, 180]
+])
+
+new_d = np.unique(d)
+
+
+print(new_d)
+
+
+type(new_d)
 
 # Exercise 7 - Determine how many unique numbers there are in d.
 
+import numpy as np
+
+d = np.array([
+    [90, 30, 45, 0, 120, 180],
+    [45, -90, -30, 270, 90, 0],
+    [60, 45, -45, 90, -45, 180]
+])
+
+new_d = np.unique(d)
+
+len(new_d)
+
 # Exercise 8 - Print out the shape of d.
+
+import numpy as np
+
+d = np.array([
+    [90, 30, 45, 0, 120, 180],
+    [45, -90, -30, 270, 90, 0],
+    [60, 45, -45, 90, -45, 180]
+])
+
+print(d.shape)
 
 # Exercise 9 - Transpose and then print out the shape of d.
 
+import numpy as np
+
+d = np.array([
+    [90, 30, 45, 0, 120, 180],
+    [45, -90, -30, 270, 90, 0],
+    [60, 45, -45, 90, -45, 180]
+])
+
+new_d = np.transpose(d)
+print(new_d.shape)
+
 # Exercise 10 - Reshape d into an array of 9 x 2
+
+import numpy as np
+
+d = np.array([
+    [90, 30, 45, 0, 120, 180],
+    [45, -90, -30, 270, 90, 0],
+    [60, 45, -45, 90, -45, 180]
+])
+
+new_d =d.reshape(9, 2)
+
+print(new_d)
