@@ -233,33 +233,63 @@ mean_of_b = b.mean()
 print(mean_of_b)
 
 # Exercise 5 - refactor the following to use numpy for calculating the product of all numbers multiplied together.
-product_of_b = 1 * b
 
-print(product_of_b)
+import numpy as np
+
+b = np.array([
+                [3, 4, 5],
+                 [6, 7, 8]
+            ])
+
+
+squares_of_b = np.prod(b)
+
+print(squares_of_b)
 
 # Exercise 6 - refactor the following to use numpy to find the list of squares 
-squares_of_b = []
-for row in b:
-    for number in row:
-        squares_of_b.append(number**2)
 
+import numpy as np
+
+b = np.array([
+                [3, 4, 5],
+                 [6, 7, 8]
+            ])
+
+b = b**2
+squares_of_b = b.reshape(1,6).tolist()
+
+print(squares_of_b)
 
 # Exercise 7 - refactor using numpy to determine the odds_in_b
-odds_in_b = []
-for row in b:
-    for number in row:
-        if(number % 2 != 0):
-            odds_in_b.append(number)
 
+import numpy as np
+
+b = np.array([
+                [3, 4, 5],
+                 [6, 7, 8]
+            ])
+
+odds_in_b = b[b % 2 == 1]
+
+print(odds_in_b)
 
 # Exercise 8 - refactor the following to use numpy to filter only the even numbers
-evens_in_b = []
-for row in b:
-    for number in row:
-        if(number % 2 == 0):
-            evens_in_b.append(number)
+
+import numpy as np
+
+b = np.array([
+                [3, 4, 5],
+                [6, 7, 8]
+            ])
+
+evens_in_b = b[b % 2 == 0]
+
+print(evens_in_b)
 
 # Exercise 9 - print out the shape of the array b.
+
+
+
 
 # Exercise 10 - transpose the array b.
 
