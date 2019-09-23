@@ -108,19 +108,16 @@ Copy the setup and exercise directions from More Numpy Practice into your 4.7_nu
 import numpy as np
 
 # Life w/o numpy to life with numpy
-
 ## Setup 1
+
 a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 # Use python's built in functionality/operators to determine the following:
-
 # Exercise 1 - Make a variable called sum_of_a to hold the sum of all the numbers in above list
 
 a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-sum_of_a = 0
-
-for num in a: sum_of_a += num
+sum_of_a = sum(a)
 
 print(sum_of_a)
 
