@@ -451,9 +451,9 @@ c = np.array([
 
 new_c = c * np.transpose(c)
 
-sum_new_c = np.prod(new_c)
+prod_new_c = np.prod(new_c)
 
-print(sum_new_c)
+print(prod_new_c)
 
 ## Setup 4
 d = np.array([

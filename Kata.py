@@ -26,3 +26,37 @@ def namelist(names):
         lst.append(dict['name'])
 
     print(lst)
+
+
+
+def anagrams(word, words):
+   
+    print(check_list)
+    count = 0
+  
+    anagram_list = []
+  
+    for string in words:
+
+         word = word
+  
+    for letter in string:
+      
+        if letter in word:
+           
+               word = word.remove(letter)
+               print(check_list)
+          
+        else:
+
+            count += 1
+      
+    if count == 0:
+      
+          anagram_list.append(string)
+          print(anagram_list)
+    
+return anagram_list
+
+
+anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada'])
