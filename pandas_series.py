@@ -108,9 +108,13 @@ print(money_float.max())
 
 print(money_float.min())
 
-############ Bin the data into 4 equally sized intervals and show how many values fall into each bin.
+#Bin the data into 4 equally sized intervals and show how many values fall into each bin.
 
-money_float[pd.cut(money_float, 4).value_counts]
+bins = pd.cut(money_float, 4)
+
+amount_bins = bins.value_counts()
+
+amount_bins
 
 # Plot a histogram of the data. Be sure to include a title and axis labels.
 
@@ -152,12 +156,37 @@ string = pd.Series(list('hnvidduckkqxwymbimkccexbkmqygkxoyndmcxnwqarhyffsjpsrabt
 
 string.value_counts()
 
-########## How many vowels are in the list?
+# How many vowels are in the list?
 
-num_vowels = string[string.apply(lambda n: True if n in("a","e","i","o","u") else False).value_counts()]
+import pandas as pd
+
+string = pd.Series(list('hnvidduckkqxwymbimkccexbkmqygkxoyndmcxnwqarhyffsjpsrabtjzsypmzadfavyrnndndvswreauxovncxtwzpwejilzjrmmbbgbyxvjtewqthafnbkqplarokkyydtubbmnexoypulzwfhqvckdpqtpoppzqrmcvhhpwgjwupgzhiofohawytlsiyecuproguy'))
+
+num_vowels = string[string.apply(lambda n: True if n in("a","e","i","o","u") else False)].value_counts()
 
 print(num_vowels)
 
 # How many consonants are in the list?
+import pandas as pd
+
+string = pd.Series(list('hnvidduckkqxwymbimkccexbkmqygkxoyndmcxnwqarhyffsjpsrabtjzsypmzadfavyrnndndvswreauxovncxtwzpwejilzjrmmbbgbyxvjtewqthafnbkqplarokkyydtubbmnexoypulzwfhqvckdpqtpoppzqrmcvhhpwgjwupgzhiofohawytlsiyecuproguy'))
+
+num_cons = string[string.apply(lambda n: True if n not in("a","e","i","o","u") else False)].value_counts()
+
+print(num_cons)
+
 # Create a series that has all of the same letters, but uppercased
+
+import pandas as pd
+
+string = pd.Series(list('hnvidduckkqxwymbimkccexbkmqygkxoyndmcxnwqarhyffsjpsrabtjzsypmzadfavyrnndndvswreauxovncxtwzpwejilzjrmmbbgbyxvjtewqthafnbkqplarokkyydtubbmnexoypulzwfhqvckdpqtpoppzqrmcvhhpwgjwupgzhiofohawytlsiyecuproguy'))
+
+up_string = string.str.upper()
+
+up_string
+
 # Create a bar plot of the frequencies of the 6 most frequently occuring letters.
+
+count_letter = up_string.value_counts().head(6)
+
+count_letter.plot.bar()
