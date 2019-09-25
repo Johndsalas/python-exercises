@@ -82,6 +82,11 @@ fruits[fruits.apply(lambda n: True if "apple" in n else False)]
 
 # Which fruit has the highest amount of vowels?
 
+def count_vowels(item):
+
+    return item.count("a") + item.count("e") +item.count("i") +item.count("o") +item.count("u")
+
+
 fruits[fruits.apply(lambda n: n if count_vowels(n).max()]
 
 # Use pandas to create a Series from the following data:
@@ -118,7 +123,6 @@ amount_bins
 
 # Plot a histogram of the data. Be sure to include a title and axis labels.
 
-
 money_float.plot.hist()
 
 # Use pandas to create a Series from the following exam scores:
@@ -135,13 +139,15 @@ grades.median()
 
 grades.plot.hist()
 
-# Convert each of the numbers above into a letter grade. For example, 86 should be a 'B' and 95 should be an 'A'.
+# Convert each of the numbers above into a letter grade. 
+# For example, 86 should be a 'B' and 95 should be an 'A'.
 
 Letter_grades = grades.apply(lambda n: "A" if n > 89 else "B" if n > 79 else "C" if n > 69 else "F")
 
 print(Letter_grades)
 
-# Write the code necessary to implement a curve. I.e. that grade closest to 100 should be converted to a 100, and that many points should be given to every other score as well.
+# Write the code necessary to implement a curve. I.e. that grade closest to 100 should be converted to a 100, 
+# and that many points should be given to every other score as well.
 
 curve_grade = grades.apply(lambda n: n + (100 - grades.max())).apply(lambda n: "A" if n > 89 else "B" if n > 79 else "C" if n > 69 else "F")
 
@@ -154,7 +160,10 @@ string = pd.Series(list('hnvidduckkqxwymbimkccexbkmqygkxoyndmcxnwqarhyffsjpsrabt
 
 # What is the most frequently occuring letter? Least frequently occuring?
 
-string.value_counts()
+string.value_counts().head(1)
+
+string.value_counts().tail(1)
+
 
 # How many vowels are in the list?
 
@@ -171,7 +180,7 @@ import pandas as pd
 
 string = pd.Series(list('hnvidduckkqxwymbimkccexbkmqygkxoyndmcxnwqarhyffsjpsrabtjzsypmzadfavyrnndndvswreauxovncxtwzpwejilzjrmmbbgbyxvjtewqthafnbkqplarokkyydtubbmnexoypulzwfhqvckdpqtpoppzqrmcvhhpwgjwupgzhiofohawytlsiyecuproguy'))
 
-num_cons = string[string.apply(lambda n: True if n not in("a","e","i","o","u") else False)].value_counts()
+num_cons = sum(string[string.apply(lambda n: True if n not in("a","e","i","o","u") else False)].value_counts())
 
 print(num_cons)
 
