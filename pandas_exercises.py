@@ -86,7 +86,7 @@ def get_db_url(user,host,password,database):
 url = get_db_url(user,host,password,database)
 
 database_name = "sakila"
-query = """ SELECT * ROM actor """
+query = """ SELECT * FROM actor """
 
 df = pd.read_sql(query, url)
 
@@ -138,7 +138,7 @@ print(df_tab)
 
 # Visualize the number of employees with each title.
 
-emp_tab = pd.merge(df_emp,df_tab, left_on='emp_no', right_on='emp_no', how='right')
+emp_tab = pd.merge(df_emp,df_tab, left_on='emp_no', right_on='emp_no', how='inner')
 
 emp_tab_group = emp_tab.groupby('title').agg('count')
 
