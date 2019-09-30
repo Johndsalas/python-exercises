@@ -151,6 +151,12 @@ emp_tab = pd.merge(df_emp,df_tab, left_on='emp_no', right_on='emp_no', how='righ
 print(emp_tab)
 
 # Visualize how frequently employees change titles.
+unique_titles = titles.groupby("title").count()
+
+unique_titles.rename(columns={"emp_no": "number_with_title"}, inplace=True)
+unique_titles = unique_titles.drop(columns=["from_date", "to_date"])
+unique_titles = unique_titles.reset_index()
+unique_titles.plot(x ='title', y='number_with_title', kind = 'bar')
 
 
 
