@@ -138,7 +138,7 @@ s.corr(method ='pearson') # Education
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-#from pydataset import data
+from pydataset import data
 import seaborn as sns
 
 from env import host, user, password
@@ -176,6 +176,23 @@ c_graph
 # Use seaborn to create a line chart of all the individual subject's reaction times 
 # and a more prominant line showing the average change in reaction time.
 
+
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from pydataset import data
+import seaborn as sns
+
 sl = data('sleepstudy')
 
-sl = sns.lineplot(x="timepoint", y="signal", data=fmri)
+sl_ave = sl.groupby('Days').agg('mean').sort_values('Days', ascending=True)
+
+sl_ave
+
+sl_ave.drop('Subject')
+
+sl_ave
+
+sl_graph = sns.lineplot(x='Days', y='Reaction',data=sl, units="Subject", estimator=None, legend= "full")
+
