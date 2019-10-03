@@ -190,9 +190,5 @@ sl_ave = sl.groupby('Days').agg('mean').sort_values('Days', ascending=True)
 
 sl_ave
 
-sl_ave.drop('Subject')
-
-sl_ave
-
-sl_graph = sns.lineplot(x='Days', y='Reaction',data=sl, units="Subject", estimator=None, legend= "full")
+sl_graph = sns.lineplot(x='Days', y='Reaction',data=sl, hue="Subject", estimator=None, legend= "full")
 
